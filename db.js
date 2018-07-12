@@ -2,8 +2,9 @@
 
 //1、需要mongoose插件对数据库进行操作
 let mongoose = require('mongoose');
+let config = require('./config');
 //2、与mongodb数据库创建通信
-mongoose.connect('mongodb://127.0.0.1/todo');
+mongoose.connect(`mongodb://127.0.0.1/${config.DB}`);
 
 //创建数据库实体对象
 let db = mongoose.connection;
